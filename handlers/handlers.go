@@ -5,12 +5,16 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/arivero007/Go-BackEnd-Tutorial/middlew"
+	"github.com/arivero007/Go-BackEnd-Tutorial/routers"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 )
 
 func Handlers() {
 	router := mux.NewRouter()
+
+	router.HandleFunc("/registro", middlew.ChequeoBD(routers.Register)).Methods("POST")
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
