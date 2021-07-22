@@ -8,14 +8,14 @@ import (
 
 type User struct {
 	ID        primitive.ObjectID `bson:"_id,omitempty" json:"id"`
-	Name      string             `bson:"_name" json:"name,omitempty"`
-	FirstName string             `bson:"_firstName" json:"firstname,omitempty"`
-	BornDate  time.Time          `bson:"_bornDate" json:"borndate,omitempty"`
-	Email     string             `bson:"_email" json:"email"`
-	Password  string             `bson:"_password" json:"password,omitempty"`
-	Avatar    string             `bson:"_avatar" json:"avataromitempty"`
-	Banner    string             `bson:"_banner" json:"banner,omitempty"`
-	Biography string             `bson:"_biography" json:"biography,omitempty"`
-	Location  string             `bson:"_location" json:"location,omitempty"`
-	Website   string             `bson:"_website" json:"website,omitempty"`
+	Name      string             `bson:"name" json:"name,omitempty"`
+	FirstName string             `bson:"firstName" json:"firstname,omitempty"`
+	BornDate  time.Time          `bson:"bornDate" json:"borndate,omitempty"`
+	Email     string             `bson:"email" json:"email"`
+	Password  string             `bson:"password" json:"password,omitempty"`
+	Avatar    string             `bson:"avatar" json:"avatar,omitempty"`
+	Banner    string             `bson:"banner" json:"banner,omitempty"`
+	Biography string             `bson:"biography" json:"biography,omitempty"`
+	Location  string             `bson:"location" json:"location,omitempty"`
+	Website   string             `bson:"website" json:"website,omitempty"`
 }
