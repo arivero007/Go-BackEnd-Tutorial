@@ -14,6 +14,11 @@ func RecordTweet(w http.ResponseWriter, r *http.Request) {
 
 	err := json.NewDecoder(r.Body).Decode(&msg)
 
+	if err != nil {
+		http.Error(w, "Error al decodificar body"+err.Error(), 400)
+		return
+	}
+
 	register := models.RecTweet{
 		UserID:  IDUser,
 		Message: msg.Message,

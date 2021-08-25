@@ -13,7 +13,13 @@ import (
 
 func UploadAvatar(w http.ResponseWriter, r *http.Request) {
 
-	file, handler, _ := r.FormFile("avatar")
+	file, handler, err := r.FormFile("avatar")
+
+	if err != nil {
+		http.Error(w, "Falta el formulario de avatar "+err.Error(), http.StatusBadRequest)
+		return
+	}
+
 	var extension = strings.Split(handler.Filename, ".")[1]
 	var identifier string = IDUser + "." + extension
 	var savePath string = "uploads/avatars/" + identifier
