@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/arivero007/Go-BackEnd-Tutorial/logs"
 	"github.com/arivero007/Go-BackEnd-Tutorial/middlew"
 	"github.com/arivero007/Go-BackEnd-Tutorial/routers"
 	"github.com/gorilla/mux"
@@ -35,5 +36,6 @@ func Handlers() {
 		PORT = "8080"
 	}
 	handler := cors.AllowAll().Handler(router)
+	logs.LogInfo("Start Web Services...")
 	log.Fatal(http.ListenAndServe(":"+PORT, handler))
 }
