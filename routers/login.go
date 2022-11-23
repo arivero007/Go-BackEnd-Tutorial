@@ -7,6 +7,7 @@ import (
 
 	"github.com/arivero007/Go-BackEnd-Tutorial/bd"
 	"github.com/arivero007/Go-BackEnd-Tutorial/jwtoken"
+	"github.com/arivero007/Go-BackEnd-Tutorial/logs"
 	"github.com/arivero007/Go-BackEnd-Tutorial/models"
 )
 
@@ -57,4 +58,5 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		Expires: expirationTime,
 	})
 
+	logs.LogInfo("Login response succesful!")
 }
