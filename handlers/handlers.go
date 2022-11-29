@@ -15,6 +15,7 @@ import (
 func Handlers() {
 	router := mux.NewRouter()
 
+	router.HandleFunc("/welcome", routers.Hello).Methods("GET")
 	router.HandleFunc("/register", middlew.ChequeoBD(routers.Register)).Methods("POST")
 	router.HandleFunc("/login", middlew.ChequeoBD(routers.Login)).Methods("POST")
 	router.HandleFunc("/profile", middlew.ChequeoBD(middlew.ValidateJWT(routers.Profile))).Methods("GET")
